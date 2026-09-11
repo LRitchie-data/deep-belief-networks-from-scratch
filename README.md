@@ -17,17 +17,17 @@ A pure **NumPy** implementation of Restricted Boltzmann Machines (RBM) and Deep 
 +-- data/              # Dataset loading & scripts
 +-- notebooks/         # Visual inspection & generation demos
 +-- src/
-¦   +-- rbm.py         # Restricted Boltzmann Machine (CD-1)
-¦   +-- dbn.py         # Deep Belief Network layer-stack
-¦   +-- dnn.py         # Fine-tuning & classification
-¦   +-- utils.py       # Data parsers (MNIST & Binary AlphaDigits)
+Â¦   +-- rbm.py         # Restricted Boltzmann Machine (CD-1)
+Â¦   +-- dbn.py         # Deep Belief Network layer-stack
+Â¦   +-- dnn.py         # Fine-tuning & classification
+Â¦   +-- utils.py       # Data parsers (MNIST & Binary AlphaDigits)
 +-- main.py            # Benchmark script
 +-- requirements.txt
 \\\
 
 ## Getting Started
 
-\\\ash
+\\\Bash
 pip install -r requirements.txt
 python main.py
 \\\
