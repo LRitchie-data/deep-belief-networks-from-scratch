@@ -75,10 +75,18 @@ With layer width fixed at 200 hidden neurons, we varied depth from **2 to 4 hidd
 ### 3.2 Criterion 2: Influence of Layer Width (Largeur)
 With depth fixed at 2 hidden layers, we varied layer width from **100 to 500 neurons**.
 
+<p align="center">
+  <img src="assets/Nombre neuronnes par couches.png" width="60%" alt="Error vs Layer Width" />
+</p>
+
 > **Analysis**: Expanding network width improves overall performance due to higher representational capacity. However, the pre-trained DBN network systematically maintains lower error rates than random initialization, confirming that DBN weights act as an effective regularizer.
 
 ### 3.3 Criterion 3: Influence of Training Dataset Size
 With an architecture fixed at `[784, 200, 200, 10]`, we varied the training set size from **1,000 to 40,000 images**.
+
+<p align="center">
+  <img src="assets/Erreur taille dataset.png" width="60%" alt="Error vs Dataset Size" />
+</p>
 
 > **Analysis**:
 > - **Low-Data Regime ($N = 1,000$)**: The performance gap is massive. Unsupervised feature learning extracts structural priors from unlabeled data, helping overcome severe label scarcity.
