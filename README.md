@@ -126,7 +126,7 @@ While modern architectures frequently use ReLU and residual connections, greedy 
 +-- requirements.txt
 ```
 
-### Quickstart & Reproducibility
+# Quickstart & Reproducibility
 ## 1. Installation
 Bash
 git clone [https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git](https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git)
