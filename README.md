@@ -35,7 +35,7 @@ We trained the RBM exclusively on the character 'A' to evaluate its reconstructi
 We tested the RBM's ability to simultaneously learn multiple characters. The goal is to verify if the network captures a multimodal probability distribution and spontaneously sample across classes via **Gibbs Sampling**.
 
 <p align="center">
-  <img src="assets/Lettre.png" width="75%" alt="RBM Multimodal Generation" />
+  <img src="assets/Lettre.png" width="50%" alt="RBM Multimodal Generation" />
 </p>
 
 > **Analysis**: The RBM successfully generates shapes resembling the learned characters. Gibbs sampling allows navigation through the state space: the network occasionally hesitates between letters (creating chimera artifacts), but predominantly converges toward stable energy basins matching the training data, validating its ability to model complex multimodal distributions.
