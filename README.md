@@ -113,6 +113,7 @@ While modern architectures frequently use ReLU and residual connections, greedy 
 
 ## Project Structure
 
+```text
 +-- assets/            # Benchmark figures and evaluation curves
 +-- data/              # Binary datasets (MNIST & AlphaDigits)
 +-- notebooks/         # Complete Google Colab / Jupyter notebook
@@ -123,7 +124,7 @@ While modern architectures frequently use ReLU and residual connections, greedy 
 ¦   +-- utils.py       # Data loaders & pre-processing routines
 +-- main.py            # Model entrypoint
 +-- requirements.txt
-
+```
 
 ### Quickstart & Reproducibility
 ## 1. Installation
