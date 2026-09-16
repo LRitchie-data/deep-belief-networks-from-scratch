@@ -144,3 +144,12 @@ Execute the pipeline via:
 Bash
 python main.py
 Or open and run the notebook notebooks/exploration_generative_alpha.ipynb.
+
+
+
+
+# References
+Hinton, G. E., Osindero, S., & Teh, Y. W. (2006). A fast learning algorithm for deep belief nets. Neural Computation, 18(7), 1527-1554.
+
+Bengio, Y., et al. (2007). Greedy layer-wise training of deep networks. NeurIPS.
+'@
