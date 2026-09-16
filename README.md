@@ -30,7 +30,7 @@ The RBM is an energy-based bipartite graphical model trained using the **Contras
 Training the RBM on a single character class ('A', visible dimension $p=320$, latent dimension $q=100$) allows the network to reconstruct and synthesize distinct variants of the letter.
 
 <p align="center">
-  <img src="assets/Générer A.png" width="70%" alt="Single Class Generation A" />
+  <img src="assets/GÃ©nÃ©rer A.png" width="70%" alt="Single Class Generation A" />
 </p>
 
 #### 2.1.2 Multimodal Modeling Capacity
@@ -50,8 +50,8 @@ We monitored the Mean Squared Error (MSE) between the input vectors and their re
 </p>
 
 > **Convergence Dynamics**:
-> - **Fast Learning Phase (Epochs 1–20)**: The MSE drops sharply as the RBM captures global topological structures.
-> - **Fine-tuning Phase (Epochs 20–100)**: The curve stabilizes asymptotically, corresponding to local stroke refinements and validating gradient convergence under CD-1.
+> - **Fast Learning Phase (Epochs 1â€“20)**: The MSE drops sharply as the RBM captures global topological structures.
+> - **Fine-tuning Phase (Epochs 20â€“100)**: The curve stabilizes asymptotically, corresponding to local stroke refinements and validating gradient convergence under CD-1.
 
 ### 2.2 Deep Belief Network (DBN)
 By stacking multiple RBMs in a greedy, layer-wise procedure, higher latent layers extract hierarchical, abstract representations. Image generation through deep Gibbs chains filters local high-frequency noise, producing cleaner boundaries than single-layer RBMs.
@@ -113,14 +113,45 @@ While modern architectures frequently use ReLU and residual connections, greedy 
 
 ## Project Structure
 
-```text
 +-- assets/            # Benchmark figures and evaluation curves
 +-- data/              # Binary datasets (MNIST & AlphaDigits)
 +-- notebooks/         # Complete Google Colab / Jupyter notebook
 +-- src/
-¦   +-- rbm.py         # Contrastive Divergence CD-1 implementation
-¦   +-- dbn.py         # Deep Belief Network layer stacking
-¦   +-- dnn.py         # Feedforward & Backpropagation fine-tuning
-¦   +-- utils.py       # Data loaders & pre-processing routines
+Â¦   +-- rbm.py         # Contrastive Divergence CD-1 implementation
+Â¦   +-- dbn.py         # Deep Belief Network layer stacking
+Â¦   +-- dnn.py         # Feedforward & Backpropagation fine-tuning
+Â¦   +-- utils.py       # Data loaders & pre-processing routines
 +-- main.py            # Model entrypoint
 +-- requirements.txt
+
+
+### Quickstart & Reproducibility
+## 1. Installation
+Bash
+git clone [https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git](https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git)
+cd deep-belief-networks-from-scratch
+pip install -r requirements.txt
+## 2. Dataset Setup
+Ensure the following binary files are placed in the working directory:
+
+train-images-idx3-ubyte
+
+train-labels-idx1-ubyte
+
+t10k-images-idx3-ubyte
+
+t10k-labels-idx1-ubyte
+
+binaryalphadigs.mat
+
+## 3. Run
+Execute the pipeline via:
+
+Bash
+python main.py
+Or open and run the notebook notebooks/exploration_generative_alpha.ipynb.
+
+### References
+Hinton, G. E., Osindero, S., & Teh, Y. W. (2006). A fast learning algorithm for deep belief nets. Neural Computation, 18(7), 1527-1554.
+
+Bengio, Y., et al. (2007). Greedy layer-wise training of deep network
