@@ -28,7 +28,7 @@ The RBM is implemented from scratch and trained using the **Contrastive Divergen
 We trained the RBM exclusively on the character 'A' to evaluate its reconstruction and generation capabilities.
 
 <p align="center">
-  <img src="assets/Générer A.png" width="70%" alt="RBM Single Character Generation A" />
+  <img src="assets/GÃ©nÃ©rer A.png" width="70%" alt="RBM Single Character Generation A" />
 </p>
 
 #### 2.1.2 Multimodal Modeling Capacity (Multiple Characters)
@@ -48,8 +48,8 @@ To quantify learning efficiency, we monitored the Mean Squared Error (MSE) betwe
 </p>
 
 > **Convergence Dynamics**:
-> - **Fast Learning Phase (Epochs 1–20)**: Error drops sharply, indicating the network quickly learns global topological structures.
-> - **Stabilization Phase (Epochs 20–100)**: Error decreases asymptotically toward an asymptotic plateau (~0.02), reflecting detail refinement under gradient updates.
+> - **Fast Learning Phase (Epochs 1â€“20)**: Error drops sharply, indicating the network quickly learns global topological structures.
+> - **Stabilization Phase (Epochs 20â€“100)**: Error decreases asymptotically toward an asymptotic plateau (~0.02), reflecting detail refinement under gradient updates.
 
 ### 2.2 Deep Belief Network (DBN)
 By stacking multiple RBMs using greedy layer-wise training, higher latent layers extract hierarchical, abstract representations. Images generated via deep DBN chains are cleaner and less noisy than those from a single RBM, as upper layers filter local high-frequency noise.
@@ -58,7 +58,7 @@ By stacking multiple RBMs using greedy layer-wise training, higher latent layers
 
 ## 3. Supervised Classification: DNN on MNIST
 
-We then focus on the **MNIST** classification benchmark ($28 \times 28$ digits 0–9). We compare identical feedforward DNN architectures initialized via DBN pre-training versus pure random initialization.
+We then focus on the **MNIST** classification benchmark ($28 \times 28$ digits 0â€“9). We compare identical feedforward DNN architectures initialized via DBN pre-training versus pure random initialization.
 - **Hyperparameters**: 20 RBM epochs / 30 Backprop epochs, Learning Rate = 0.1, Batch Size = 64.
 
 ### 3.1 Criterion 1: Influence of Network Depth (Profondeur)
@@ -107,13 +107,40 @@ This project demonstrates two core principles:
 ## Project Structure
 
 ```text
-+-- assets/            # Evaluation curves and generated sample plots
++-- assets/            # Benchmark figures and evaluation curves
 +-- data/              # Binary datasets (MNIST & AlphaDigits)
-+-- notebooks/         # Complete Google Colab / Jupyter notebook implementation
++-- notebooks/         # Complete Google Colab / Jupyter notebook
 +-- src/
-¦   +-- rbm.py         # Restricted Boltzmann Machine (CD-1)
-¦   +-- dbn.py         # Deep Belief Network layer stacking
-¦   +-- dnn.py         # Supervised fine-tuning & classification
-¦   +-- utils.py       # Data loaders & pre-processing routines
-+-- main.py            # Model execution script
+Â¦   +-- rbm.py         # Contrastive Divergence CD-1 implementation
+Â¦   +-- dbn.py         # Deep Belief Network layer stacking
+Â¦   +-- dnn.py         # Feedforward & Backpropagation fine-tuning
+Â¦   +-- utils.py       # Data loaders & pre-processing routines
++-- main.py            # Model entrypoint
 +-- requirements.txt
+```
+
+# Quickstart & Reproducibility
+## 1. Installation
+Bash
+git clone [https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git](https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git)
+cd deep-belief-networks-from-scratch
+pip install -r requirements.txt
+## 2. Dataset Setup
+Ensure the following binary files are placed in the working directory:
+
+train-images-idx3-ubyte
+
+train-labels-idx1-ubyte
+
+t10k-images-idx3-ubyte
+
+t10k-labels-idx1-ubyte
+
+binaryalphadigs.mat
+
+## 3. Run
+Execute the pipeline via:
+
+Bash
+python main.py
+Or open and run the notebook notebooks/exploration_generative_alpha.ipynb.
