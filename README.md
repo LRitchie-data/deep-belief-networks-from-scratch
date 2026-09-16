@@ -121,10 +121,12 @@ This project demonstrates two core principles:
 
 # Quickstart & Reproducibility
 ## 1. Installation
+```text
 Bash
 git clone [https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git](https://github.com/LRitchie-data/deep-belief-networks-from-scratch.git)
 cd deep-belief-networks-from-scratch
 pip install -r requirements.txt
+```
 ## 2. Dataset Setup
 Ensure the following binary files are placed in the working directory:
 
@@ -140,9 +142,10 @@ binaryalphadigs.mat
 
 ## 3. Run
 Execute the pipeline via:
-
+```text
 Bash
 python main.py
+```
 Or open and run the notebook notebooks/exploration_generative_alpha.ipynb.
 
 
